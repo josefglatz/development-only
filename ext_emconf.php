@@ -2,7 +2,7 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'development only',
     'description' => 'Development Only settings for TYPO3 CMS projects',
-    'version' => '1.0.0',
+    'version' => '1.0.1',
     'state' => 'stable',
     'author' => 'Josef Glatz',
     'author_email' => 'josefglatz@gmailcom',
