@@ -1,5 +1,5 @@
 {
-	"name": "josefglatz/development-only",
+	"name": "helmutstrasser/development-only",
 	"type": "typo3-cms-extension",
 	"description": "Development Only settings for TYPO3 CMS projects",
 	"keywords": [
