@@ -13,14 +13,6 @@
 	"require": {
 		"typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10 || ^11"
 	},
-	"replace": {
-		"typo3-ter/development_only": "self.version"
-	},
-	"autoload": {
-		"psr-4": {
-			"JosefGlatz\\DevelopmentOnly\\": "Classes/"
-		}
-	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "development_only"
