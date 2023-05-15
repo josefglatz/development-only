@@ -11,7 +11,7 @@
 	],
 	"license": "GPL-2.0-only",
 	"require": {
-		"typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10"
+		"typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10 || ^11"
 	},
 	"replace": {
 		"typo3-ter/development_only": "self.version"
