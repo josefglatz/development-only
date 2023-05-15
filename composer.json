@@ -1,21 +1,29 @@
 {
-	"name": "helmutstrasser/development-only",
-	"type": "typo3-cms-extension",
-	"description": "Development Only settings for TYPO3 CMS projects",
-	"keywords": [
-		"TYPO3",
-		"extension",
-		"productivity",
-		"development",
-		"developmentenvironments"
-	],
-	"license": "GPL-2.0-only",
-	"require": {
-		"typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10 || ^11"
-	},
-	"extra": {
-		"typo3/cms": {
-			"extension-key": "development_only"
-		}
-	}
+  "name": "josefglatz/development-only",
+  "type": "typo3-cms-extension",
+  "description": "Development Only settings for TYPO3 CMS projects",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "productivity",
+    "development",
+    "developmentenvironments"
+  ],
+  "license": "GPL-2.0-only",
+  "require": {
+    "typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10 || ^11"
+  },
+  "replace": {
+    "typo3-ter/development_only": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "JosefGlatz\\DevelopmentOnly\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "development_only"
+    }
+  }
 }
