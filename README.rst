@@ -23,14 +23,21 @@ What does the extension offer you?
 
 Each of the features are enabled automatically if the extension is activated and the ApplicationContext is set to ``Development``.
 
-1. Hide Install Tool Security Check in Reports module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Hide Install Tool Security Check in Reports module (TYPO3 >= 11 LTS only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``\TYPO3\CMS\Install\Report\SecurityStatusReport`` is disabled.
 
 * You get no warning if you use ``joh316`` as Install Tool password.
 * You get no warning if your Install Tool is activated (forever).
 
+
+2. Set common $GLOBALS['TYPO3_CONF_VARS'] for development context
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- SYS/sitename: Adding the prefix "DEV"
+- SYS/devIPmask: *
+- SYS/displayErrors: true
 
 
 ------------
