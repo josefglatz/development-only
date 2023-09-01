@@ -35,9 +35,16 @@ Each of the features are enabled automatically if the extension is activated and
 2. Set common $GLOBALS['TYPO3_CONF_VARS'] for development context
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- SYS/sitename: Adding the prefix "DEV"
-- SYS/devIPmask: *
-- SYS/displayErrors: true
+- ``SYS/sitename``: Adding the prefix "DEV"
+- ``SYS/devIPmask``: *
+- ``SYS/displayErrors``: true
+- ``SYS/trustedHostsPattern``: Flexible and not strict value
+- ``SYS/exceptionalErrors``: more verbose setting
+- ``BE/debug``: true, to show field names, ...
+- ``BE/sessionTimeout``: set to very high value
+- ``BE/installToolPassword``: set to classic value ``joh316``
+- ``FE/sessionTimeout``: set to very high value
+- ``FE/debug``: active
 
 
 ------------
