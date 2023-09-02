@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    autoconfigure: false
+    autowire: false
+
+  JosefGlatz\DevelopmentOnly\Report\SelfReport:
+    resource: '../Classes/Report/*'
+    autoconfigure: true
