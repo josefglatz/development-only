@@ -3,6 +3,6 @@ services:
     autoconfigure: false
     autowire: false
 
-  \JosefGlatz\DevelopmentOnly\Report\SelfReport:
+  JosefGlatz\DevelopmentOnly\Report\:
     resource: '../Classes/Report/*'
     autoconfigure: true
