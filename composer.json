@@ -11,7 +11,7 @@
   ],
   "license": "GPL-2.0-or-later",
   "require": {
-    "imanghafoori/composer-json": "^1.0",
+    "nadar/php-composer-reader": "^2",
     "typo3/cms-core": "^10 || ^11 || ^12"
   },
   "replace": {
