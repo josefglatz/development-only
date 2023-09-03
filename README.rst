@@ -23,7 +23,7 @@ What does the extension offer you?
 
 Each of the features are enabled automatically if the extension is activated and the ApplicationContext is set to ``Development``.
 
-1. Hide Install Tool Security Check in Reports module (TYPO3 >= 11 LTS only)
+1. Hide Install Tool Security Check in Reports module (TYPO3 =< 11 LTS only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``\TYPO3\CMS\Install\Report\SecurityStatusReport`` is disabled.
@@ -57,6 +57,20 @@ Installation
 ``composer require --dev josefglatz/development-only``
 
   Since every component works only in the Development Application Context I advice you to require the extension only as ``require-dev`` package in your TYPO3 instance. Make sure to use ``composer install --no-dev`` while packaging your TYPO3 project for the productive hosting environment.
+
+
+How to check the installation
+-----------------------------
+
+For TYPO3 12 and up: You find a status in the TYPO3 report module (if the report
+module is installed).
+
+- throws an error notice if the extension is active in a non-development context
+- in composer mode: throws an error notice if the extension is in "require"
+  section instead of "require-dev" section
+
+
+------------
 
 
 .. _Adding documentation: https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/Documentation/Index.html

@@ -15,6 +15,7 @@ call_user_func(
             ? \TYPO3\CMS\Core\Core\Environment::getContext()->isDevelopment()
             : \TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()->isDevelopment();
 
+        // @TODO: Remove if TYPO3 =< 11.5 LTS support will be dropped
         // unset Install Tool Report for local instances
         if ($devContext && isset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['security'])) {
             foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['security'] as $key => $value) {
