@@ -7,7 +7,6 @@ use Nadar\PhpComposerReader\ComposerReader;
 use Nadar\PhpComposerReader\RequireDevSection;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Localization\LanguageService;
-use TYPO3\CMS\Core\Package\PackageManager;
 use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Reports\StatusProviderInterface;
@@ -20,15 +19,22 @@ use TYPO3\CMS\Reports\Status;
  */
 class SelfReport implements StatusProviderInterface
 {
+    public const EXTKEY = 'josefglatz/development-only';
+
     public function getStatus(): array
     {
         $contextDev = Environment::getContext()->isDevelopment();
 
         $status[] = GeneralUtility::makeInstance(
             Status::class,
-            'Instance running in development mode',
-            ($contextDev || getenv('IS_DDEV_PROJECT')) ? 'OK' : 'Not OK.',
-            ($contextDev || getenv('IS_DDEV_PROJECT')) ? 'Super! You are running the extension in development context.'  : 'josefglatz/development-only needs to be enabled only in a non-productive environment. (E.g. by requiring the package only in with "composer req josefglatz/development-only --dev")',
+            $this->getLanguageService()
+                ->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.runningdevelopmentmode.title.label'),
+            ($contextDev || getenv('IS_DDEV_PROJECT'))
+                ? $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.generic.title.ok')
+                : $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.generic.title.notok'),
+            ($contextDev || getenv('IS_DDEV_PROJECT'))
+                ? $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.runningdevelopmentmode.message.ok')
+                : $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.runningdevelopmentmode.message.notok'),
             $this->getDevelopmentContextSeverity()
         );
 
@@ -44,8 +50,8 @@ class SelfReport implements StatusProviderInterface
      */
     public function getLabel(): string
     {
-        // @todo: move report label to xlf file
-        return 'Development Only "josefglatz/development-only"';
+        return $this->getLanguageService()
+            ->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.label');
     }
 
     protected function getDevelopmentContextSeverity()
@@ -72,7 +78,7 @@ class SelfReport implements StatusProviderInterface
         if ($composerFileReader->canRead()) {
             $requiredevSection = new RequireDevSection($composerFileReader);
             foreach ($requiredevSection as $key => $package) {
-                if ($key === 'josefglatz/development-only') {
+                if ($key === self::EXTKEY) {
                     $installedAsRequireDev = true;
                     break;
                 }
@@ -83,8 +89,15 @@ class SelfReport implements StatusProviderInterface
         return GeneralUtility::makeInstance(
             Status::class,
             'Package installed as devDependency',
-            $installedAsRequireDev ? 'OK' : 'Nope. Please fix it!',
-            $installedAsRequireDev ? $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.devdependencies.message.ok') : $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.devdependencies.message.notok'),
+            $installedAsRequireDev
+                ? $this->getLanguageService()
+                ->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.generic.title.ok')
+                : $this->getLanguageService()
+                ->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.devdependencies.title.notok'),
+            $installedAsRequireDev ? $this->getLanguageService()
+                ->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.devdependencies.message.ok')
+                : $this->getLanguageService()
+                ->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.devdependencies.message.notok'),
             $installedAsRequireDev ? ContextualFeedbackSeverity::OK : ContextualFeedbackSeverity::WARNING
         );
     }

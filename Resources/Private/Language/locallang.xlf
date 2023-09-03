@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" original="" datatype="plaintext" date="2023-09-02T16:43:56+02:00">
+	<file source-language="en" original="" datatype="plaintext" date="2023-09-03T07:34:31+02:00">
 		<body>
-			<trans-unit id="report.devdependencies.message.notok" resname="report.devdependencies.message.notok">
+			<trans-unit id="report.status.devdependencies.message.notok" resname="report.status.devdependencies.message.notok">
 				<source>&lt;![CDATA[Please require the extension as devDependency (&lt;code&gt;composer require josefglatz/development-only -W --dev&lt;/code&gt;).]]&gt;</source>
 			</trans-unit>
-			<trans-unit id="report.devdependencies.message.ok" resname="report.devdependencies.message.notok">
+			<trans-unit id="report.status.devdependencies.message.ok" resname="report.status.devdependencies.message.ok">
 				<source>The extension is set up correct. All done right.</source>
+			</trans-unit>
+			<trans-unit id="report.status.devdependencies.title.notok" resname="report.status.devdependencies.title.notok">
+				<source>Nope. Please fix it!</source>
+			</trans-unit>
+			<trans-unit id="report.label" resname="report.label">
+				<source>Development Only &#34;josefglatz/development-only&#34;</source>
+			</trans-unit>
+			<trans-unit id="report.status.runningdevelopmentmode.title.label" resname="report.status.runningdevelopmentmode.title.label">
+				<source>Instance running in development mode or within DDEV</source>
+			</trans-unit>
+			<trans-unit id="report.status.runningdevelopmentmode.message.ok" resname="report.status.runningdevelopmentmode.message.ok">
+				<source>Super! You are running the extension in development context.</source>
+			</trans-unit>
+			<trans-unit id="report.status.runningdevelopmentmode.message.notok" resname="report.status.runningdevelopmentmode.message.notok">
+				<source>josefglatz/development-only needs to be enabled only in a non-productive environment. (E.g. by requiring the package only in with &#34;composer req josefglatz/development-only --dev&#34;)</source>
+			</trans-unit>
+			<trans-unit id="report.status.generic.title.ok" resname="report.status.generic.title.ok">
+				<source>OK</source>
+			</trans-unit>
+			<trans-unit id="report.status.generic.title.notok" resname="report.status.generic.title.notok">
+				<source>Not OK.</source>
 			</trans-unit>
 		</body>
 	</file>
