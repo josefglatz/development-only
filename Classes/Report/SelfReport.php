@@ -29,10 +29,10 @@ class SelfReport implements StatusProviderInterface
             Status::class,
             $this->getLanguageService()
                 ->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.runningdevelopmentmode.title.label'),
-            ($contextDev || getenv('IS_DDEV_PROJECT'))
+            ($contextDev)
                 ? $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.generic.title.ok')
                 : $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.generic.title.notok'),
-            ($contextDev || getenv('IS_DDEV_PROJECT'))
+            ($contextDev)
                 ? $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.runningdevelopmentmode.message.ok')
                 : $this->getLanguageService()->sL('LLL:EXT:development_only/Resources/Private/Language/locallang.xlf:report.status.runningdevelopmentmode.message.notok'),
             $this->getDevelopmentContextSeverity()
@@ -58,7 +58,7 @@ class SelfReport implements StatusProviderInterface
     {
         $applicationContextDevelopment = Environment::getContext()->isDevelopment();
 
-        if (!$applicationContextDevelopment && getenv('IS_DDEV_PROJECT') !== 'true') {
+        if (!$applicationContextDevelopment) {
             $severity = ContextualFeedbackSeverity::ERROR;
         } else {
             $severity = ContextualFeedbackSeverity::OK;

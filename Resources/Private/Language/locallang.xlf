@@ -15,7 +15,7 @@
 				<source>Development Only &#34;josefglatz/development-only&#34;</source>
 			</trans-unit>
 			<trans-unit id="report.status.runningdevelopmentmode.title.label" resname="report.status.runningdevelopmentmode.title.label">
-				<source>Instance running in development mode or within DDEV</source>
+				<source>Instance running in development mode</source>
 			</trans-unit>
 			<trans-unit id="report.status.runningdevelopmentmode.message.ok" resname="report.status.runningdevelopmentmode.message.ok">
 				<source>Super! You are running the extension in development context.</source>
