@@ -1,0 +1,8 @@
+# This file is part of josefglatz/development-only which
+# must only be loaded in non-productive environments
+
+[applicationContext matches "#^Development#"]
+  # Do not disable freshly pasted records
+  setup.default.neverHideAtCopy = 1
+  setup.override.neverHideAtCopy = 1
+[global]

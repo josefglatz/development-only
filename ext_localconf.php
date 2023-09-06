@@ -1,11 +1,16 @@
 <?php
 declare(strict_types=1);
 
+use TYPO3\CMS\Core\Core\Environment;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+defined('TYPO3') or die();
+
 call_user_func(
     static function ($extKey) {
-        $devContext = class_exists(\TYPO3\CMS\Core\Core\Environment::class)
-            ? \TYPO3\CMS\Core\Core\Environment::getContext()->isDevelopment()
-            : \TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()->isDevelopment();
+        $devContext = class_exists(Environment::class)
+            ? Environment::getContext()->isDevelopment()
+            : GeneralUtility::getApplicationContext()->isDevelopment();
 
 
         if ($devContext) {
@@ -21,6 +26,11 @@ call_user_func(
 
             $GLOBALS['TYPO3_CONF_VARS']['FE']['sessionTimeout'] = 31536000;
             $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
+
+            // @todo: TYPO3 13 only support: remove EMU::addUserTSConfig() since it gets loaded by default
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
+                '@import "EXT:' . $extKey . '/Configuration/user.tsconfig"'
+            );
         }
     },
     'development_only'
