@@ -1,0 +1,10 @@
+# This file is part of josefglatz/development-only which
+# must only be loaded in non-productive environments
+
+// Disable hideAtCopy for common tables on development specific environments
+[applicationContext matches "#^Development#"]
+  TCEMAIN.table {
+    pages.disableHideAtCopy = 1
+    tt_content.disableHideAtCopy = 1
+  }
+[global]
