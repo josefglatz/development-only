@@ -14,6 +14,9 @@ call_user_func(
 
 
         if ($devContext) {
+            /**
+             * Adopt TYPO3_CONF_VARS for development purpose
+             */
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'DEV: ' . $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] . '';
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = true;
@@ -27,7 +30,11 @@ call_user_func(
             $GLOBALS['TYPO3_CONF_VARS']['FE']['sessionTimeout'] = 31536000;
             $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
 
-            // @todo: TYPO3 13 only support: remove EMU::addUserTSConfig() since it gets loaded by default
+            /**
+             * Add default User TsConfig
+             *
+             * @todo: TYPO3 13 only support: remove EMU::addUserTSConfig() since it gets loaded by default
+             */
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
                 '@import "EXT:' . $extKey . '/Configuration/user.tsconfig"'
             );
