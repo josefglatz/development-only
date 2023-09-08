@@ -46,6 +46,12 @@ Each of the features are enabled automatically if the extension is activated and
 - ``FE/sessionTimeout``: set to very high value
 - ``FE/debug``: active
 
+3. Disables yoast-seo-for-typo3/yoast_seo in page module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The snippet preview in development context is not working and is disabled via
+User TsConfig in development context with
+`setup.override.hideYoastInPageModule = 1`.
 
 ------------
 
@@ -56,7 +62,10 @@ Installation
 
 ``composer require --dev josefglatz/development-only``
 
-  Since every component works only in the Development Application Context I advice you to require the extension only as ``require-dev`` package in your TYPO3 instance. Make sure to use ``composer install --no-dev`` while packaging your TYPO3 project for the productive hosting environment.
+  Since every component works only in the Development Application Context I
+  advice you to require the extension only as ``require-dev`` package in your
+  TYPO3 instance. Make sure to use ``composer install --no-dev`` while packaging
+  your TYPO3 project for the productive hosting environment.
 
 
 How to check the installation

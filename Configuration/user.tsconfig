@@ -5,4 +5,7 @@
   # Do not disable freshly pasted records
   setup.default.neverHideAtCopy = 1
   setup.override.neverHideAtCopy = 1
+
+  # Disable Yoast SEO Page Module Include
+  setup.override.hideYoastInPageModule = 1
 [global]
