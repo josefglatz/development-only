@@ -53,6 +53,10 @@ The snippet preview in development context is not working and is disabled via
 User TsConfig in development context with
 `setup.override.hideYoastInPageModule = 1`.
 
+4. Setting backend pagetree settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- The PageId is always shown next to the page nav-/title
 ------------
 
 
