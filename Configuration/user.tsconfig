@@ -10,4 +10,7 @@
   setup.override.hideYoastInPageModule = 1
 
   options.pageTree.showPageIdWithTitle = 1
+
+  # Unset the requirement of mfa
+  auth.mfa.required = 0
 [global]

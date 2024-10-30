@@ -57,6 +57,13 @@ User TsConfig in development context with
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - The PageId is always shown next to the page nav-/title
+
+5. Remove the requirement of a multi-factor authentication for a user
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This makes it possible to create a temporary user for debug situations without
+having to deal with MFA things.
+
 ------------
 
 
