@@ -50,7 +50,7 @@ Each of the features are enabled automatically if the extension is activated and
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The snippet preview in development context is not working and is disabled via
-User TsConfig in development context with
+User TSconfig in development context with
 `setup.override.hideYoastInPageModule = 1`.
 
 4. Setting backend pagetree settings
