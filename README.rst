@@ -19,7 +19,8 @@ by improving the overall productivity and hides what is not needed in such an en
 What does the extension offer you?
 ----------------------------------
 
-  The extension is still in development. If you have ideas, snippets which needs to be added, please leave me an `Issue`_.
+  If you have ideas, snippets which needs to be added, please leave me an
+  `Issue`_.
 
 Each of the features are enabled automatically if the extension is activated and the ApplicationContext is set to ``Development``.
 
