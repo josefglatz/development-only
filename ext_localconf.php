@@ -23,6 +23,7 @@ call_user_func(
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.+';
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = E_ALL & ~(E_STRICT | E_NOTICE | E_DEPRECATED | E_USER_DEPRECATED);
             $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = true;
+            $GLOBALS['TYPO3_CONF_VARS']['BE']['lockSSL'] = true;
             $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 31536000;
             // joh316
             $GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword'] = '$argon2i$v=19$m=16384,t=16,p=2$aDZHUmRqTUFUR1dpYWlqdA$aR5bQdCiYwZ6ClUPpTzMqhnQt24CprQWKU2VavXp3T4';
