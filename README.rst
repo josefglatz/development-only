@@ -66,6 +66,15 @@ User TSconfig in development context with
 This makes it possible to create a temporary user for debug situations without
 having to deal with MFA things.
 
+6. Time saver task "make root pages"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Building new TYPO3 instances often needs some power user features. Executing
+console command `typo3 development-only:make-root-pages` adjusts the
+`is_siteroot` property to 1 and sets `hidden` property also to 1. The same
+functionality is provided as context menu item for the root page uid 0 within
+the TYPO3 backend page tree.
+
 ------------
 
 

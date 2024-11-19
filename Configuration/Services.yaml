@@ -2,7 +2,30 @@ services:
   _defaults:
     autoconfigure: false
     autowire: false
+    public: false
 
   JosefGlatz\DevelopmentOnly\Report\:
     resource: '../Classes/Report/*'
     autoconfigure: true
+  JosefGlatz\DevelopmentOnly\ContextMenu\:
+    resource: '../Classes/ContextMenu/*'
+    autoconfigure: true
+
+  JosefGlatz\DevelopmentOnly\Command\MakeRootPagesCommand:
+    tags:
+      -
+        name: console.command
+        command: 'development-only:make-root-pages'
+        description: 'Mark pages on level 0 as root'
+        schedulable: false
+
+  JosefGlatz\DevelopmentOnly\Controller\:
+    resource: '../Classes/Controller/*'
+    autoconfigure: true
+    autowire: true
+    public: true
+
+  JosefGlatz\DevelopmentOnly\Repository\PagesRepository:
+    autoconfigure: true
+    autowire: true
+    public: true

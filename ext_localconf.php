@@ -39,6 +39,12 @@ call_user_func(
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
                 '@import "EXT:' . $extKey . '/Configuration/user.tsconfig"'
             );
+
+            /**
+             * Register item provider for context menu
+             */
+            $GLOBALS['TYPO3_CONF_VARS']['BE']['ContextMenu']['ItemProviders'][1731820919] =
+                \JosefGlatz\DevelopmentOnly\ContextMenu\MakeRootPagesItemProvider::class;
         }
     },
     'development_only'
