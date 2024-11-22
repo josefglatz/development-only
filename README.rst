@@ -73,7 +73,7 @@ Building new TYPO3 instances often needs some power user features. Executing
 console command `typo3 development-only:make-root-pages` adjusts the
 `is_siteroot` property to 1 and sets `hidden` property also to 1. The same
 functionality is provided as context menu item for the root page uid 0 within
-the TYPO3 backend page tree.
+the TYPO3 backend page tree as logged in TYPO3 administrator.
 
 ------------
 

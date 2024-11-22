@@ -34,6 +34,7 @@ class PagesRepository
             ->from('pages')
             ->where(
                 $qB->expr()->and(
+                    $qB->expr()->eq('doktype', $qB->createNamedParameter(1, ParameterType::INTEGER)),
                     $qB->expr()->eq('pid', $qB->createNamedParameter(0, ParameterType::INTEGER)),
                     $qB->expr()->eq('is_siteroot', $qB->createNamedParameter(0, ParameterType::INTEGER)),
                 )

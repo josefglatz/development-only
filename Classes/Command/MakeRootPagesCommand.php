@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace JosefGlatz\DevelopmentOnly\Command;
 
 use Doctrine\DBAL\Exception;
-use Doctrine\DBAL\ParameterType;
 use JosefGlatz\DevelopmentOnly\Repository\PagesRepository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
