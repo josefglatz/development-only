@@ -75,6 +75,11 @@ console command `typo3 development-only:make-root-pages` adjusts the
 functionality is provided as context menu item for the root page uid 0 within
 the TYPO3 backend page tree as logged in TYPO3 administrator.
 
+7. Do not hide newly created pages by default
+
+Simple `TCAdefaults.pages.hidden = 0` if development context is active. Not more
+and not less.
+
 ------------
 
 
